@@ -12,8 +12,6 @@ class YourTestClass(TestCase):
         response = self.client.post('/qr-code-generate', json.dumps(payload), content_type='application/json')
         self.assertEqual(response.status_code, 200)
 
-        decodedObject = decode(response.json()['qr_code'])
-        a = decodedObject.data
 
     def test_invalid_url(self):
         payload = {"url": "google.com"}
